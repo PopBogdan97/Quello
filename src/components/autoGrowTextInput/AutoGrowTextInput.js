@@ -20,7 +20,7 @@ export default class AutoGrowTextInput extends React.Component {
                         height: event.nativeEvent.contentSize.height,
                     });
                 }}
-                style={{height: Math.max(35, this.state.height), padding:10, borderBottom: 2, borderColor:'#777', marginLeft:15, marginRight:15}}
+                style={{height: Math.max(35, this.state.height), backgroundColor: 'yellow', padding:10, borderBottomWidth: 2, borderColor:'#777', marginLeft:15, marginRight:15}}
                 value={this.state.text}
             />
         );

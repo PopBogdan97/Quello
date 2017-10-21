@@ -13,7 +13,7 @@ export default class HomeNav extends Component {
         return (
             <View>
                 <Header
-                    statusBarProps={{barStyle: 'light-content'}}
+                    statusBarProps={{barStyle: 'dark-content'}}
 
                     centerComponent={
                         <View style={{width: Dimensions.get('window').width * 0.85}}>

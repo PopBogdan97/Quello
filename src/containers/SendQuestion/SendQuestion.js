@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import {Text, View, ImageBackground, Dimensions, TextInput, ScrollView, KeyboardAvoidingView} from 'react-native';
+import {Text, View, ImageBackground, Dimensions, TextInput, ScrollView, KeyboardAvoidingView, Platform} from 'react-native';
 import QuestionNav from '../../components/navBar/QuestionNav.js';
 import {Button, SocialIcon, FormLabel, FormInput, FormValidationMessage} from 'react-native-elements';
 import AutoGrowTextInput from "../../components/autoGrowTextInput/AutoGrowTextInput";
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 export default class SendQuestion extends Component {
     constructor(props) {
@@ -20,18 +19,21 @@ export default class SendQuestion extends Component {
         return (
 
 
-            <View style={{flex: 1, backgroundColor: 'transparent'}}>
+            <KeyboardAvoidingView style={{flex: 1, backgroundColor: 'transparent'}}
+                                  behavior={"position"}
+            >
 
                 <ImageBackground source={{uri: 'https://questooquello.it/img/immaginine.png'}} style={{width, height}}>
                     <View style={{flex: 1}}>
                         <QuestionNav OnPress={() => navigate('Home')}/>
-                        <KeyboardAwareScrollView
+                        <ScrollView
+                            behavior={"position"}
 
-                            enableOnAndroid={true}
                             style={{flex:1, marginTop: Dimensions.get('window').height * 0.15}}
-                            contentContainerStyle={{alignItems:'center', paddingBottom:235}}
+                            contentContainerStyle={{alignItems:'center'}}>
 
->
+
+
                             <Text style={{
                                 fontWeight: 'bold',
                                 fontSize: 30,
@@ -44,6 +46,7 @@ export default class SendQuestion extends Component {
                                 marginLeft: 20,
                                 width: Dimensions.get('window').width - 40
                             }}>
+
 
                                 <FormLabel labelStyle={{fontSize: 15, color: 'black'}}>Intro</FormLabel>
                                 <AutoGrowTextInput defaultValue={'Preferiresti'} style={{color: 'black', padding: 10}}/>
@@ -80,11 +83,11 @@ export default class SendQuestion extends Component {
                                 containerViewStyle={{marginBottom:5}}
                             />
 
-                        </KeyboardAwareScrollView>
+                        </ScrollView>
                     </View>
                 </ImageBackground>
 
-            </View>
+            </KeyboardAvoidingView>
 
 
         );

@@ -1,5 +1,5 @@
 import React from 'react'
-import {TextInput} from 'react-native'
+import {TextInput, KeyboardAvoidingView} from 'react-native'
 
 
 export default class AutoGrowTextInput extends React.Component {
@@ -11,6 +11,7 @@ export default class AutoGrowTextInput extends React.Component {
     }
     render() {
         return (
+
             <TextInput
                 {...this.props}
                 multiline={true}

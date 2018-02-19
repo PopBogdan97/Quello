@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, ImageBackground, Dimensions} from 'react-native';
+import {Text, View, ImageBackground, Dimensions, Image} from 'react-native';
 import HomeNav from '../../components/navBar/HomeNav.js';
 import {Button, SocialIcon} from 'react-native-elements';
 
@@ -14,7 +14,7 @@ export default class Home extends Component {
         return (
 
 
-            <View style={{flex: 1, backgroundColor: 'transparent'}}>
+
 
                 <ImageBackground source={{uri: 'https://questooquello.it/img/immaginine.png'}} style={{width, height}}>
                     <View style={{flex: 1}}>
@@ -37,6 +37,8 @@ export default class Home extends Component {
                                 marginTop: Dimensions.get('window').height * 0.05,
                                 alignItems: 'center'
                             }}>
+                                <Image source={{uri: 'https://questooquello.it/img/immaginine.png'}} style={{height:200, width:200}}/>
+
                                 <Text>ciaoS</Text>
                             </View>
                             <View style={{
@@ -81,14 +83,13 @@ export default class Home extends Component {
                     </View>
                 </ImageBackground>
 
-            </View>
+
 
 
         );
     }
+
+
 }
-
-
-
 
 

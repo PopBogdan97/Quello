@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Header, Icon} from 'react-native-elements'
 import {Text, View, Dimensions} from "react-native";
-import {Constants} from "expo";
+import {getStatusBarHeight} from "react-native-status-bar-height";
 
 
 
@@ -13,7 +13,7 @@ export default class HomeNav extends Component {
         return (
             <View>
                 <Header
-                    statusBarProps={{barStyle: 'dark-content'}}
+                    statusBarProps={{barStyle: 'light-content'}}
 
                     centerComponent={
                         <View style={{width: Dimensions.get('window').width * 0.85}}>
@@ -23,7 +23,7 @@ export default class HomeNav extends Component {
                     leftComponent={<Icon name='new-message' type='entypo' color='#777' size={30} onPress={this.props.OnPress}/>}
 
                     backgroundColor={'#ffffffa0'}
-                    outerContainerStyles={{marginTop: Constants.statusBarHeight, height: 50, padding: 0}}
+                    outerContainerStyles={{marginTop: getStatusBarHeight(), height: 50, padding: 0}}
                     innerContainerStyles={{padding: 10, alignItems: 'flex-end', flexDirection: 'row-reverse'}}
                 />
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Header, Icon} from 'react-native-elements'
 import {Text, View, Dimensions} from "react-native";
-import {Constants} from "expo";
+import {getStatusBarHeight} from "react-native-status-bar-height";
 
 
 
@@ -23,7 +23,7 @@ export default class QuestionNav extends Component {
                     leftComponent={<Icon name='md-arrow-round-back' type='ionicon' color='#777' size={30} onPress={this.props.OnPress}/>}
 
                     backgroundColor={'#ffffffa0'}
-                    outerContainerStyles={{marginTop: Constants.statusBarHeight, height: 50, padding: 0}}
+                    outerContainerStyles={{marginTop: getStatusBarHeight(), height: 50, padding: 0}}
                     innerContainerStyles={{padding: 10, alignItems: 'flex-end'}}
                 />
 
